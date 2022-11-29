@@ -11,11 +11,12 @@ class Car:
         return(f"{self.colour} {self.make} {self.model}")
 
 # Thought I would add a function for shifting gear (e.g. shift to N for the carwash track).
-    def shiftGear(self, gear):
-        self.gear = gear
+    def shiftGear(self, input_gear):
+        self.gear = input_gear
         print(F"The car shifts gear to {self.gear}.")
 
 if __name__ == "__main__":
     hedwig = Car("white", "Toyota", "Rav4")
+    print(hedwig.make)
     hedwig.carObject()
     hedwig.shiftGear("N")
