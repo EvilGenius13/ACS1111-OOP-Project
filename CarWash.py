@@ -16,7 +16,7 @@ class CarWash:
 
     def create_clerk(self):
         name = input("Clerk's Name: ")
-        weekend_shift = input(f"Which shift is {name} working? ")
+        weekend_shift = input(f"Is {name} working this weekend? ")
         return Clerk(name, weekend_shift)      
 
     def add_clerk_to_shift(self, name, shift):
@@ -60,4 +60,4 @@ if __name__ == "__main__":
     print()
 
     print("Number of cars washed: " + str(marios.cars_washed))
-    print("Current till ammount: $"+ str(marios.current_till_amount))
+    print("Current till amount: $"+ str(marios.current_till_amount))
