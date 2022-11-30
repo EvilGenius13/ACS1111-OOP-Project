@@ -3,8 +3,8 @@ from Person import Person
 class Clerk(Person):
     def __init__(self, name, weekend_shift = False):
         super().__init__(name)
-        self.amount_owed = 0
-        self.weekend_shift = True
+        self._amount_owed = 0
+        self._weekend_shift = weekend_shift
 
     def greet(self):
         print(f"Hi I'm {self.name}. Are you here for a car wash?")
@@ -13,7 +13,7 @@ class Clerk(Person):
         print(f"Looks like my shift is over! Time to go home.")
 
     def what_shift(self):
-        if self.weekend_shift == True:
+        if self._weekend_shift == True:
             print(f"Yeah it's my turn to work the weekend...")
         else:
             print(f"Yay I have the weekend off!")

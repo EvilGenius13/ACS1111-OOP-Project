@@ -4,11 +4,11 @@ from Car import Car
 class CarWash:
     def __init__(self, name, open_till_amount = 350):
         self.name = name
-        self.open_till_amount = open_till_amount
-        self.current_till_amount = open_till_amount
+        self._open_till_amount = open_till_amount
+        self._current_till_amount = open_till_amount
         self.list_of_cars_washed = list()
         self.cars_washed = len(self.list_of_cars_washed)
-        self.clerks_on_shift = list()
+        self._clerks_on_shift = list()
           
 
     def store_front(self):
@@ -21,7 +21,7 @@ class CarWash:
 
     def add_clerk_to_shift(self, name):
         shift = input(f"what shift is {name} working? ")
-        self.clerks_on_shift.append({name: shift})
+        self._clerks_on_shift.append({name: shift})
 
     def create_car(self):
         name = input("Car make and model: ")
@@ -32,7 +32,7 @@ class CarWash:
         car = self.create_car()
         print(f"Washing {car.carObject()}")
         self.cars_washed += 1
-        self.current_till_amount += 10
+        self._current_till_amount += 10
         self.list_of_cars_washed.append(car.carObject())
 
 
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     marios.add_clerk_to_shift(clerk2.name)
     print()
     print("Clerks on shift today:")
-    for clerk in marios.clerks_on_shift:
+    for clerk in marios._clerks_on_shift:
         print(clerk)
     print()
 
@@ -61,4 +61,4 @@ if __name__ == "__main__":
     print()
 
     print("Number of cars washed: " + str(marios.cars_washed))
-    print("Current till amount: $"+ str(marios.current_till_amount))
+    print("Current till amount: $"+ str(marios._current_till_amount))
