@@ -1,14 +1,13 @@
 
 class Car:
-    def __init__(self, colour, make, model):
+    def __init__(self, name, colour):
+        self.name = name
         self.colour = colour
-        self.make = make
-        self.model = model
         self.gear = 'D'
 
     def carObject(self):
-        print(f"This is a {self.colour} {self.make} {self.model}.")
-        return(f"{self.colour} {self.make} {self.model}")
+        # print(f"This is a {self.name}.")
+        return(f"{self.colour} {self.name}")
 
 # Thought I would add a function for shifting gear (e.g. shift to N for the carwash track).
     def shiftGear(self, input_gear):
