@@ -19,7 +19,8 @@ class CarWash:
         weekend_shift = input(f"Is {name} working this weekend? ")
         return Clerk(name, weekend_shift)      
 
-    def add_clerk_to_shift(self, name, shift):
+    def add_clerk_to_shift(self, name):
+        shift = input(f"what shift is {name} working? ")
         self.clerks_on_shift.append({name: shift})
 
     def create_car(self):
@@ -40,9 +41,9 @@ if __name__ == "__main__":
     print(marios)
 
     clerk1 = marios.create_clerk()
-    marios.add_clerk_to_shift(clerk1.name,'morning shift')
+    marios.add_clerk_to_shift(clerk1.name)
     clerk2 = marios.create_clerk()
-    marios.add_clerk_to_shift(clerk2.name,'evening shift')
+    marios.add_clerk_to_shift(clerk2.name)
     print()
     print("Clerks on shift today:")
     for clerk in marios.clerks_on_shift:
